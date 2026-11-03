@@ -139,7 +139,7 @@ body[data-audience-extra="true"] #targeting-denominators>span:has(.other),body[d
 @media(prefers-reduced-motion:reduce){.audience-stage *{scroll-behavior:auto!important;}}
 
 /* The visualization gets the space; controls and evidence stay within reach. */
-body[data-audience-open="true"] .atlas{grid-template-columns:minmax(0,1fr) 280px;min-height:0;}
+body[data-audience-open="true"] .atlas{grid-template-columns:minmax(0,1fr) 360px;min-height:0;}
 body[data-audience-open="true"] .map-stage{min-height:0;}
 body[data-audience-open="true"][data-audience-focus="true"] .atlas{grid-template-columns:minmax(0,1fr);}
 body[data-audience-open="true"][data-audience-focus="true"] .map-stage{grid-column:1;}
@@ -181,12 +181,12 @@ body[data-audience-open="true"][data-audience-focus="true"] .explorer{display:no
 .audience-notes-content .identity-review-entry .text-button{font-size:10px;line-height:1.7;}
 .audience-notes-content .audience-findings{min-height:0;padding:12px 0;}
 .audience-notes-content #audience-help{font-size:10px;margin-top:12px;}
-body[data-audience-open="true"] .targeting-explorer{padding:20px 18px;}
+body[data-audience-open="true"] .targeting-explorer{padding:22px 24px;}
 body[data-audience-open="true"] .audience-desk-heading{margin-bottom:16px;}
 body[data-audience-open="true"] .audience-desk-heading h2{font-size:21px;}
 body[data-audience-open="true"] .targeting-criterion{min-height:60px;}
-@media(min-width:1650px){.audience-stage{padding:0 32px;}.audience-heading{min-height:52px;}.audience-heading h2{font-size:25px;}body[data-audience-open="true"] .atlas{grid-template-columns:minmax(0,1fr) 300px;}}
-@media(min-width:801px) and (max-width:1100px){body[data-audience-open="true"] .atlas{grid-template-columns:minmax(0,1fr) 260px;}.audience-stage{padding:0 16px;}.audience-heading{flex-wrap:wrap;gap:4px 8px;padding:8px 0;min-height:48px;}.audience-heading-copy{flex-basis:100%;}.audience-heading h2{font-size:20px;}.audience-scope{margin-left:0;margin-right:auto;}.audience-history{gap:4px;}.audience-history .audience-chart-tools button{width:28px;height:30px;}.audience-notes>summary{font-size:9px;padding:6px;}.audience-flow-choice{max-width:36%;}}
+@media(min-width:1650px){.audience-stage{padding:0 32px;}.audience-heading{min-height:52px;}.audience-heading h2{font-size:25px;}body[data-audience-open="true"] .atlas{grid-template-columns:minmax(0,1fr) 390px;}}
+@media(min-width:801px) and (max-width:1100px){body[data-audience-open="true"] .atlas{grid-template-columns:minmax(0,1fr) 340px;}.audience-stage{padding:0 16px;}.audience-heading{flex-wrap:wrap;gap:4px 8px;padding:8px 0;min-height:48px;}.audience-heading-copy{flex-basis:100%;}.audience-heading h2{font-size:20px;}.audience-scope{margin-left:0;margin-right:auto;}.audience-history{gap:4px;}.audience-history .audience-chart-tools button{width:28px;height:30px;}.audience-notes>summary{font-size:9px;padding:6px;}.audience-flow-choice{max-width:36%;}}
 @media(max-width:800px){
   body[data-audience-open="true"] .atlas{height:auto;min-height:0;display:flex;}
   body[data-audience-open="true"][data-audience-focus="true"] .explorer{display:contents;}

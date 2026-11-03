@@ -28,9 +28,9 @@ html{overflow-x:clip}
 h1{font-size:43px;letter-spacing:-1.2px}.intro{font-size:11px;line-height:1.7;margin-bottom:15px}
 .atlas-vitals{display:flex;gap:22px;margin:17px 0 20px;padding:12px 0 13px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .atlas-vitals>div{display:flex;flex-direction:column;gap:3px}.atlas-vitals strong{font:500 25px var(--serif);letter-spacing:-.4px;font-variant-numeric:tabular-nums}.atlas-vitals span{font-size:7px;letter-spacing:1px;color:var(--muted)}
-.selection-row{margin-top:17px}.state-picker select{font-size:27px}
-.explorer-tabs{display:flex;gap:16px;border-bottom:1px solid var(--line);margin:18px 0 0}
-.explorer-tabs button{padding:13px 0 12px;position:relative;font-size:10px;flex:1;white-space:nowrap;color:var(--muted);font-weight:600;text-align:center}
+.selection-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;margin:17px 0 13px}.state-picker{flex:1 1 170px;min-width:0}.state-picker select{font-size:clamp(22px,2vw,27px)}
+.explorer-tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin:18px 0 0}
+.explorer-tabs button{padding:12px 2px 11px;position:relative;font-size:10px;letter-spacing:-.2px;flex:1;white-space:nowrap;color:var(--muted);font-weight:600;text-align:center}
 .explorer-tabs button[aria-selected=true]{color:var(--green)}.explorer-tabs button[aria-selected=true]::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--green)}
 .period-control{margin-top:16px}
 body[data-tab=races] .results-section,body[data-tab=races] .filter-section,body[data-tab=races] .period-control{display:none}

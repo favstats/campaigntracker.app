@@ -1,8 +1,8 @@
 /* Independent library surfaces share the atlas's newsroom typography and spacing. */
-.platform-control{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;border-top:1px solid var(--line);margin-top:14px;padding-top:13px}
-.platform-control>label{font-size:8px;font-weight:700;letter-spacing:1.1px;color:var(--muted)}
-.platform-control select,.native-platform-controls select{min-width:0;max-width:100%;border:1px solid var(--line);background:#f7f9fc;color:var(--ink);padding:9px 24px 9px 10px;border-radius:3px;font-size:11px;cursor:pointer}
-.platform-control .text-button{font-size:10px;padding:10px 0;white-space:nowrap}
+.platform-control{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"lbl btn" "sel sel";gap:7px 10px;align-items:center;border-top:1px solid var(--line);margin-top:14px;padding-top:13px}
+.platform-control>label{grid-area:lbl;font-size:8px;font-weight:700;letter-spacing:1.1px;color:var(--muted);margin:0}
+.platform-control select,.native-platform-controls select{grid-area:sel;min-width:0;width:100%;max-width:100%;border:1px solid var(--line);background:#f7f9fc;color:var(--ink);padding:9px 24px 9px 10px;border-radius:3px;font-size:11px;cursor:pointer}
+.platform-control .text-button{grid-area:btn;justify-self:end;font-size:10px;padding:2px 0;white-space:nowrap}
 .native-platform-controls{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:9px}
 .native-platform-controls select{flex:1 1 100%;font-size:10px;padding-top:8px;padding-bottom:8px}
 .native-platform-controls .checkbox-label{flex-basis:100%;padding:5px 0;min-height:32px}
