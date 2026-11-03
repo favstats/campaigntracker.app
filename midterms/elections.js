@@ -116,7 +116,7 @@
     const counts=new Map();
     for(const r of races.filter(r=>r.general>0&&(state.place==='US'||r.state===state.place))){const key=localKinds.has(r.kind)?'local':r.kind;counts.set(key,(counts.get(key)||0)+1);}
     const chips=[['all','All'],['senate','Senate'],['governor','Governor'],['house','US House'],['upper','State Senate'],['lower','State House'],['local','Local'],['statewide','Statewide'],['judicial','Courts']].filter(([k])=>k==='all'||counts.has(k));
-    $('race-quick-filters').innerHTML='<label class="sr-only" for="race-kind-select">Filter races by office</label><select id="race-kind-select">'+chips.map(([k,t])=>`<option value="${k}" ${sideKind===k?'selected':''}>${escape(k==='all'?'All offices':t)}</option>`).join('')+'</select>';
+    $('race-quick-filters').innerHTML='<label class="race-filter-label" for="race-kind-select">Filter races by office</label><select id="race-kind-select">'+chips.map(([k,t])=>`<option value="${k}" ${sideKind===k?'selected':''}>${escape(k==='all'?'All offices':t)}</option>`).join('')+'</select>';
     $('race-kind-select').onchange=e=>{sideKind=e.target.value;sideLimit=6;renderSidebar();};
     $('race-cards').innerHTML=list.length?list.slice(0,sideLimit).map(r=>raceCard(r)).join(''):`<div class="election-empty"><strong>No November records in this source view.</strong><p>Browse all 2026 records for earlier elections and filings, or check the election office’s candidate list.</p><button id="browse-earlier" class="text-button">Explore all 2026 records ↗</button></div>`;
     bindRaces($('race-cards'));
