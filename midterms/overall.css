@@ -1,0 +1,78 @@
+/* A shared spending desk, with source detail one click away. */
+body[data-platform="overall"] .period-control,body[data-spending="true"] .period-control{display:flex!important}
+body[data-platform][data-spending="true"] .period-control{display:flex!important}
+body[data-platform="overall"][data-tab="ads"] .results-section,body[data-spending="true"][data-tab="ads"] .results-section{display:block!important}
+body[data-platform="overall"] #library-results,body[data-spending="true"] #library-results{display:none!important}
+.overall-source-controls{display:flex;gap:6px;margin:12px 0 9px;flex-wrap:wrap}
+.spending-desk{padding:0 23px 17px;background:var(--panel);min-width:0}
+.spending-desk .platform-control{margin-top:0}
+.history-spend{display:block;font-size:11px;line-height:1.6;font-weight:650;margin-top:7px;color:var(--ink);font-variant-numeric:tabular-nums}
+.overall-source-controls label{position:relative;display:flex;align-items:center;gap:5px;min-height:34px;padding:7px 9px;border:1px solid var(--line);border-radius:3px;font-size:10px;font-weight:600;background:#f6f8fb;cursor:pointer}
+.overall-source-controls label:has(input:checked){background:#eef3fb;border-color:#b2c5e4}
+.overall-source-controls input{accent-color:#2054b3;width:12px;height:12px;margin:0}
+.spend-units-control{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px;margin:12px 0}
+.spend-units-control label,.timeline-heading label{font-size:8px;letter-spacing:1px;font-weight:750;color:var(--muted)}
+.spend-units-control select{min-width:0;border:1px solid var(--line);border-radius:3px;padding:9px 8px;background:#f7f9fc;color:var(--ink);font-size:11px}
+.spend-units-control select:disabled{opacity:.65}
+#overall-nationwide-control{font-size:10px;line-height:1.5;margin-top:4px}
+.timeline-control{border-top:1px solid var(--line);margin-top:15px;padding-top:14px}
+.timeline-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.timeline-heading output{font-size:12px;font-weight:650;font-variant-numeric:tabular-nums;color:var(--ink)}
+#history-slider{display:block;width:100%;height:30px;margin:4px 0 1px;accent-color:#2054b3;cursor:ew-resize;touch-action:pan-y}
+.timeline-dates{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:9px}
+.timeline-dates button{padding:4px 10px;color:#2054b3;font-size:9px;min-height:25px}
+.timeline-dates button:disabled{color:var(--muted);cursor:default}
+#history-status{font-size:8px;line-height:1.5;color:var(--muted);margin:7px 0 0}
+.overall-breakdown{border-top:1px solid var(--line);margin:20px 0;padding-top:3px}
+.overall-source-stack{display:grid;gap:13px;margin:16px 0}
+.overall-source-row{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:4px 9px;min-width:0}
+.overall-source-row>span:first-child{font-size:11px;font-weight:650;display:flex;align-items:center;gap:7px}
+.overall-source-row>span:first-child i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.overall-source-row b{font-size:13px;font-weight:650;font-variant-numeric:tabular-nums}
+.overall-source-row small{font-size:8px;color:var(--muted);grid-column:1/-1}
+.overall-source-track{height:3px;grid-column:1/-1;background:#edf0f4;display:block;margin-top:2px;overflow:hidden;border-radius:2px}
+.overall-source-track i{display:block;height:100%;min-width:0;transition:width 180ms ease}
+.overall-evidence{font-size:10px;line-height:1.8;margin:15px 0 0;color:var(--muted)}
+.overall-evidence summary{font-weight:600;color:var(--ink);cursor:pointer;min-height:30px;padding-top:3px}
+.overall-evidence p{font-size:10px;line-height:1.8;color:var(--muted);margin:9px 0;overflow-wrap:anywhere}
+.overall-coverage-note{font-size:9px;line-height:1.8;color:var(--muted);margin:11px 0 0}
+.overall-advertiser .advertiser-value{white-space:nowrap;font-variant-numeric:tabular-nums}
+.tooltip-population{font-size:9px;line-height:1.7;color:var(--muted);margin-top:7px}
+.candidate-overall-total{display:flex;align-items:baseline;gap:14px;margin:18px 0}
+.candidate-overall-total strong{font-size:26px;line-height:1.2;letter-spacing:-.6px;font-weight:650;white-space:nowrap}
+.candidate-overall-total>span{font-size:10px;line-height:1.6;color:var(--muted)}
+.candidate-overall-local{background:#f3f6fb;padding:12px 14px;display:flex;align-items:baseline;gap:12px;margin:13px 0}
+.candidate-overall-local strong{font-size:17px;font-weight:650;white-space:nowrap}
+.candidate-overall-local span{font-size:10px;line-height:1.6;color:var(--muted)}
+.candidate-platform-data{order:-1}
+.candidate-meta-evidence{font-size:10px;line-height:1.8;margin-top:18px;border-top:1px solid var(--line);padding-top:12px;color:var(--muted)}
+.candidate-meta-evidence summary{cursor:pointer;font-weight:600;min-height:30px;color:var(--ink)}
+.profile-spending-table{margin:21px 0;border-top:1px solid var(--line)}
+.profile-spending-head,.profile-spending-row{display:grid;grid-template-columns:minmax(85px,1fr) minmax(90px,1fr) minmax(105px,1.1fr);gap:9px;align-items:center;border-bottom:1px solid var(--line);padding:14px 0}
+.profile-spending-head{font-size:8px;color:var(--muted);font-weight:650;letter-spacing:.3px;padding:10px 0}
+.profile-spending-row{font-size:12px}.profile-spending-row>b{font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;text-align:right}
+.profile-spending-row>span i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px}
+.profile-spending-row small{display:block;font-size:9px;color:var(--muted);line-height:1.6;margin-top:5px}
+.profile-spending-head span:not(:first-child){text-align:right}
+.map-spend-summary{margin-top:10px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;max-width:420px}
+.map-spend-summary strong{font-size:29px;line-height:1.1;font-weight:750;letter-spacing:-.8px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.map-spend-summary small{font-size:9px;line-height:1.6;color:var(--muted);max-width:170px}
+/* The combined profile supplies the headline; Meta remains available as evidence. */
+.candidate-advertising:has(+ .candidate-platform-data){border:0}
+@media(max-width:800px){
+ .map-stage{order:1;height:550px;min-height:550px}
+ .national-navigator,.elections-open .national-navigator{left:auto;right:16px;bottom:77px}
+ .map-spend-summary{gap:5px;margin-top:8px}
+ .map-spend-summary strong{font-size:24px}
+ .map-spend-summary small{font-size:8px}
+ .spending-desk{order:2;padding:18px 20px;border-top:1px solid var(--line)}
+ .place-context{order:3}.filter-section{order:4}.results-section,.race-explorer,.insights-explorer,#library-results{order:5}
+ .overall-source-controls label{min-height:42px;flex:1;justify-content:center}
+ .spend-units-control select{min-height:42px}
+ #history-slider{height:40px}.timeline-dates button{min-height:36px}
+ .candidate-overall-total,.candidate-overall-local{flex-wrap:wrap;gap:8px}
+ .profile-spending-head,.profile-spending-row{grid-template-columns:minmax(73px,1fr) minmax(74px,1fr) minmax(84px,1fr);gap:7px}
+ .profile-spending-row>b{font-size:11px}.profile-spending-head{font-size:7px}
+ .timeline-heading output{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.overall-source-track i{transition:none}}

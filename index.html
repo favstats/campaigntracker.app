@@ -89,6 +89,7 @@
         /* Stagger delays for grid items */
         .tracker-card:nth-child(1).reveal-on-scroll { transition-delay: 0s; }
         .tracker-card:nth-child(2).reveal-on-scroll { transition-delay: 0.1s; }
+        .tracker-card:nth-child(3).reveal-on-scroll { transition-delay: 0.2s; }
         .feature-card:nth-child(1).reveal-on-scroll { transition-delay: 0s; }
         .feature-card:nth-child(2).reveal-on-scroll { transition-delay: 0.05s; }
         .feature-card:nth-child(3).reveal-on-scroll { transition-delay: 0.1s; }
@@ -560,8 +561,8 @@
         /* Tracker Cards */
         .tracker-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
 
         .tracker-card {
@@ -611,6 +612,34 @@
 
         .tracker-card--netherlands .tracker-card__flag {
             background: linear-gradient(90deg, #ae1c28 33%, #fff 33%, #fff 66%, #21468b 66%);
+        }
+
+        .tracker-card--nl-local .tracker-card__flag {
+            background: linear-gradient(90deg, #ae1c28 33%, #fff 33%, #fff 66%, #21468b 66%);
+        }
+
+        .tracker-card--nl-local {
+            border: 2px solid #2563eb;
+        }
+
+        .tracker-card__badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #22c55e;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            z-index: 2;
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
         .tracker-card__header {
@@ -1966,6 +1995,12 @@
                     <a href="https://www.campaigntracker.nl" class="btn btn--secondary" target="_blank">
                         <span class="btn__flag">🇳🇱</span> Dutch Parliamentary Election 2025
                     </a>
+                    <a href="https://gr26.campaigntracker.nl" class="btn btn--primary" target="_blank" style="background: #22c55e; border-color: #22c55e;">
+                        <span class="btn__flag">🏛️</span> NL Local Elections 2026 (LIVE)
+                    </a>
+                    <a href="/midterms/" class="btn btn--secondary">
+                        <span class="btn__flag">🇺🇸</span> US Midterms 2026 Atlas
+                    </a>
                 </div>
             </div>
         </div>
@@ -1976,19 +2011,19 @@
         <div class="container">
             <div class="stats-bar__grid">
                 <div class="stats-bar__item">
-                    <div class="stats-bar__number">134,000+</div>
+                    <div class="stats-bar__number">210,000+</div>
                     <div class="stats-bar__label">Posts analyzed</div>
                 </div>
                 <div class="stats-bar__item">
-                    <div class="stats-bar__number">1,400+</div>
+                    <div class="stats-bar__number">2,500+</div>
                     <div class="stats-bar__label">AI posts identified</div>
                 </div>
                 <div class="stats-bar__item">
-                    <div class="stats-bar__number">4</div>
+                    <div class="stats-bar__number">5</div>
                     <div class="stats-bar__label">Social media platforms</div>
                 </div>
                 <div class="stats-bar__item">
-                    <div class="stats-bar__number">2</div>
+                    <div class="stats-bar__number">3</div>
                     <div class="stats-bar__label">Elections tracked</div>
                 </div>
             </div>
@@ -2002,8 +2037,8 @@
                 <div class="section__label">Country Trackers</div>
                 <h2 class="section__title">Election Campaign Dashboards</h2>
                 <p class="section__description">
-                    Comprehensive platforms providing transparent, daily-updated insights into AI usage 
-                    and political advertising across national elections.
+                    Comprehensive platforms providing transparent, daily-updated insights into AI usage
+                    and political advertising across national and local elections.
                 </p>
             </div>
             <div class="tracker-grid">
@@ -2038,8 +2073,8 @@
                         </div>
                     </div>
                     <p class="tracker-card__description">
-                        Analyzing all posts on Facebook, Instagram, TikTok, and X from parties, candidates, and 
-                        selected influencers. We track AI-generated messages, labeling compliance, actors depicted, 
+                        Analyzing all posts on Facebook, Instagram, TikTok, and X from parties, candidates, and
+                        selected influencers. We track AI-generated messages, labeling compliance, actors depicted,
                         topics discussed, and whether the tone is positive or negative.
                     </p>
                     <a href="https://www.campaigntracker.nl" class="tracker-card__link" target="_blank">
@@ -2049,10 +2084,52 @@
                         </svg>
                     </a>
                 </div>
+                <div class="tracker-card tracker-card--nl-local">
+                    <div class="tracker-card__flag"></div>
+                    <div class="tracker-card__badge">LIVE</div>
+                    <div class="tracker-card__header">
+                        <div class="tracker-card__icon">🏛️</div>
+                        <div class="tracker-card__meta">
+                            <div class="tracker-card__country">Netherlands</div>
+                            <div class="tracker-card__election">Local Elections 2026 (GR26)</div>
+                        </div>
+                    </div>
+                    <p class="tracker-card__description">
+                        Monitoring 78,000+ posts across Facebook, Instagram, TikTok, and X from 9,000+ candidates
+                        and party accounts in 25 Dutch municipalities. Over 400 AI-generated images and videos verified
+                        through multi-stage human review. Tracking AI labeling compliance, political themes, and sentiment.
+                    </p>
+                    <a href="https://gr26.campaigntracker.nl" class="tracker-card__link" target="_blank">
+                        Visit gr26.campaigntracker.nl
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="tracker-card">
+                    <div class="tracker-card__flag" style="background: linear-gradient(90deg, #b22234 33%, #fff 33%, #fff 66%, #3c3b6e 66%);"></div>
+                    <div class="tracker-card__header">
+                        <div class="tracker-card__icon">🗺️</div>
+                        <div class="tracker-card__meta">
+                            <div class="tracker-card__country">United States</div>
+                            <div class="tracker-card__election">2026 Midterm Elections</div>
+                        </div>
+                    </div>
+                    <p class="tracker-card__description">
+                        Interactive political advertising atlas and candidate tracker across 33,000+ ZIP codes,
+                        all 435 House districts, and state legislative areas. Analyzing ad spending and targeting across Meta, Google, and Snapchat.
+                    </p>
+                    <a href="/midterms/" class="tracker-card__link">
+                        Explore Midterms Atlas
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="trackers-cta">
                 <p class="trackers-cta__text">
-                    More elections coming soon. Interested in running a CampAIgn Tracker in your country? 
+                    Interested in running a CampAIgn Tracker in your country?
                     <a href="#contact" class="trackers-cta__link">Contact us</a>.
                 </p>
             </div>
@@ -2328,8 +2405,17 @@
                     <div class="publication-item__type">Data Dashboard</div>
                     <div class="publication-item__title">CampAIgn Tracker Netherlands Dashboard</div>
                     <div class="publication-item__meta">
-                        Interactive dashboard for the 2025 Dutch Parliamentary election · 
+                        Interactive dashboard for the 2025 Dutch Parliamentary election &middot;
                         <a href="https://www.campaigntracker.nl" target="_blank" class="publication-item__link">Visit dashboard</a>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-item__type">Data Dashboard</div>
+                    <div class="publication-item__title">CampAIgn Tracker NL Local Elections 2026 (GR26)</div>
+                    <div class="publication-item__meta">
+                        Live dashboard for the 2026 Dutch Municipal Elections across 25 municipalities &middot;
+                        78,000+ posts &middot; 400+ verified AI items &middot;
+                        <a href="https://gr26.campaigntracker.nl" target="_blank" class="publication-item__link">Visit dashboard</a>
                     </div>
                 </div>
             </div>

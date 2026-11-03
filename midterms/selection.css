@@ -1,0 +1,29 @@
+/* A single, shared description of what the data and open profiles refer to. */
+.selection-trail{padding:10px 24px 9px;background:#fdfdfe;border-bottom:1px solid #cbd5e3;position:sticky;top:0;z-index:31;min-height:68px;display:flex;flex-direction:column;gap:5px;color:var(--ink)}
+.selection-data,.selection-detail{display:flex;align-items:center;gap:12px;min-width:0;flex-wrap:wrap}
+.selection-label{font-size:9px;letter-spacing:.9px;font-weight:750;color:#5c6d87;white-space:nowrap}
+#selection-place{display:flex;align-items:center;gap:8px;font-size:12px;min-width:0;flex-wrap:wrap}
+#selection-place button{color:#2054b3;text-decoration:underline;text-underline-offset:3px;padding:3px 0;font-weight:600;text-align:left}
+#selection-place strong{font-weight:750;background:#eaf0fb;border-radius:3px;padding:4px 7px;overflow-wrap:anywhere}
+.selection-chevron{color:#7c8ba3;font-size:15px}
+.selection-chips{display:flex;gap:5px;align-items:center;flex-wrap:wrap;min-width:0}
+.selection-chip{display:inline-flex;align-items:center;background:#f3f5f9;border:1px solid #d8dfeb;border-radius:4px;font-size:11px;line-height:1.4;min-width:0;max-width:420px}
+.selection-chip>span{padding:4px 0 4px 8px;overflow-wrap:anywhere;min-width:0}
+.selection-chip button{align-self:stretch;flex-shrink:0;min-width:29px;min-height:29px;color:#33496b;font-size:16px;line-height:1}
+.selection-chip button:hover{background:#dce6f8}.selection-chip.inspection,.selection-chip.profile{background:#fff8eb;border-color:#e8d4aa;color:#715018}
+.selection-chip.dem{border-color:#8eafe2}.selection-chip.rep{border-color:#da9c97}.selection-chip.rep>span{color:#9e2d27}
+.selection-context{font-size:11px;line-height:1.6;color:#5b6880;flex:1;min-width:180px}
+.selection-clear{font-size:10px;font-weight:700;color:#2054b3;text-decoration:underline;text-underline-offset:3px;padding:4px 0;white-space:nowrap}
+.selection-current{background:#eaf0fb!important;box-shadow:inset 3px 0 #2054b3}
+.profile-selection-note{font-size:10px;line-height:1.7;color:#5b6880;padding:10px 12px;margin:12px 0;background:#f3f5f9;border-left:2px solid #8ba4cc}
+@media(min-width:801px){.atlas{height:calc(100dvh - 139px - var(--selection-height,68px));min-height:660px}}
+@media(max-width:800px){.selection-trail{padding:9px 16px;gap:7px;z-index:31}.selection-data,.selection-detail{gap:7px}.selection-context{font-size:11px;min-width:100%;order:2}.selection-clear{min-height:34px;margin-left:auto}.selection-chip{max-width:100%;font-size:10px}.selection-chip button{min-width:34px;min-height:34px}#selection-place{font-size:11px}#selection-place button{min-height:34px;display:flex;align-items:center}.selection-label{font-size:7px}.selection-chips{max-width:100%}#selection-filters{flex-basis:100%}.atlas{height:auto;min-height:0}}
+
+body[data-audience-open="false"] .map-title{background:#fdfdfeee;border:1px solid #d8dfeb;border-radius:4px;padding:12px 15px;max-width:min(440px,calc(100% - 100px));}
+body[data-audience-open="false"] #map-place{overflow-wrap:anywhere;}
+
+@media(max-width:800px){body.elections-open .selection-trail{z-index:46;max-height:min(190px,35dvh);overflow:auto;}body.elections-open .election-drawer{top:calc(113px + var(--selection-height,68px));}#targeting-explorer,.candidate-card{scroll-margin-top:calc(var(--selection-height,68px) + 12px);}}
+
+.candidate-card.candidate-selected{outline:2px solid #2054b3;outline-offset:2px;background:#f3f7fe;}
+.candidate-card.candidate-selected::before{content:'Selected candidate';display:block;font-size:10px;font-weight:750;color:#2054b3;margin:0 0 10px;}
+@media(max-width:800px){body.elections-open #selection-inspection>.selection-label{flex-basis:100%;}body.elections-open .selection-chip.profile{font-size:10px;}}
